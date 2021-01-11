@@ -7,14 +7,14 @@ import io.cucumber.java.en.When;
 public class UberBookingSteps {
 
 	
-	@Given("User wants to select a car type {string} from uber app")
-	public void user_wants_to_select_a_car_type_from_uber_app(String carType) {
-	    System.out.println("Step 1: " +carType);
+	@Given("User wants to select a car type {string} from uber application")
+	public void user_wants_to_select_a_car_type_from_uber_application(String carType) {
+	   System.out.println("Step 1: " +carType);
 	}
-
+	
 	@When("user selects car {string} and pickup point as {string} and drop location as {string}")
 	public void user_selects_car_and_pickup_point_as_and_drop_location_as(String carType, String pickUpLocation, String dropLocation) {
-		   System.out.println("Step 2: " + carType + "" + pickUpLocation + "" + dropLocation);
+		   System.out.println("Step 2: " + carType + " " + pickUpLocation + " " + dropLocation);
 	}
 
 	@Then("Driver starts the journey")
