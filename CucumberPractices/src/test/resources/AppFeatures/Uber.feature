@@ -1,6 +1,6 @@
 @All
 Feature: Uber booking feature
-	@Smoke @qa-ready @US-1001 @Epic-900
+	@Smoke @qa-ready @US-1001 @Epic-900	
   Scenario: Booking Cab Sedan
     Given User wants to select a car type "sedan" from uber application
     When user selects car "sedan" and pickup point as "Bangalore" and drop location as "Pune"
