@@ -1,12 +1,13 @@
 @All
 Feature: Uber booking feature
-	@Smoke @qa-ready @US-1001 @Epic-900	
+	@Smoke 
   Scenario: Booking Cab Sedan
     Given User wants to select a car type "sedan" from uber application
     When user selects car "sedan" and pickup point as "Bangalore" and drop location as "Pune"
     Then Driver starts the journey
     And Driver ends journey
     Then User pays 1000 USD
+    Then user checks trip details
     
 	@Regression @Smoke
   Scenario: Booking Cab SUV

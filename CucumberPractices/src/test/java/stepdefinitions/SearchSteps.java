@@ -33,7 +33,11 @@ public class SearchSteps {
 		Assert.assertEquals(product.getProductName(), name);
 		
 	}
-
+	
+	@Then("The Order Id is {int} and username is {string}")
+	public void the_order_id_is_and_username_is(Integer OrderID, String userName) {
+	    System.out.println("Order Id: "+ OrderID +" "+userName);
+	}
 	
 	
 	
