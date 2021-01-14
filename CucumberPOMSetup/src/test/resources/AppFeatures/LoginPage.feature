@@ -14,5 +14,5 @@ Feature: Login Page Feature
     When user enters username "Shavi.goyal300@gmail.com"
     And user enters password "Savi@12345"
     And user clicks on Login Button
-    Then user gets title of the home page
+    Then user gets title of the page
     And page title should be "My account - My Store"

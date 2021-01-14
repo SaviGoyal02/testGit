@@ -3,7 +3,7 @@
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.chrome.ChromeDriver;
 	import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
+   import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 	
@@ -12,7 +12,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 		public WebDriver driver;
 		public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 		
-		public void init_driver(String browser) {
+		/**
+		 * This Method is used to initialize the threadlocal driver on the basis of given browser
+		 * @param browser
+		 * @return this will return tldriver
+		 */
+		
+		
+		public WebDriver init_driver(String browser) {
 			
 			System.out.println("browser value is: " +browser);
 			
@@ -30,6 +37,26 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	        else if(browser.equals("firefox")) {
 				tlDriver.set(new SafariDriver());
 			}
+			
+	        else {
+	        	
+	        	System.out.println("Please pass the correct browser: "+browser);
+	        }
+			
+			getDriver().manage().deleteAllCookies();
+			getDriver().manage().window().maximize();
+			return getDriver();
+		}
+		
+		
+		/**
+		 * this is used to get the driver with ThreadLocal
+		 * @return
+		 */
+		
+		public static synchronized WebDriver getDriver() {
+			
+			return tlDriver.get();
 			
 		}
 		
