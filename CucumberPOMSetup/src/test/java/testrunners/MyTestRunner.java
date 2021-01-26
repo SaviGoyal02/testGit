@@ -9,9 +9,9 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		
 		
-		features = {"src/test/resources/AppFeatures/LoginPage.feature"},
+		features = {"src/test/resources/AppFeatures"},
 		glue= {"stepdefinitions","AppHooks"},
-	    plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+	    plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","timeline:test_output_thread/"},
 	    monochrome = true
 		
 		)

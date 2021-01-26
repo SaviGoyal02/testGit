@@ -13,28 +13,27 @@ public class AccountsPage {
 	private By accountSelection = By.cssSelector("div#center_column span");
 
 	public AccountsPage(WebDriver driver) {
-		this.driver= driver;
+		this.driver = driver;
 	}
-	
+
 	public int getAccountSectionCount() {
 		return driver.findElements(accountSelection).size();
 	}
-	
-	
+
 	public List<String> getAccountSectionList() {
 		List<String> accountList = new ArrayList<>();
 		List<WebElement> ele = driver.findElements(accountSelection);
-		
-		for(WebElement e: ele) {
-			String txt= e.getText();
+
+		for (WebElement e : ele) {
+			String txt = e.getText();
 			System.out.println(txt);
 			accountList.add(txt);
 		}
 		return accountList;
 	}
-	
+
 	public String getAccountsPageTitle() {
-		
+
 		return driver.getTitle();
 	}
 }
